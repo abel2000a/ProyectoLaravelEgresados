@@ -141,5 +141,6 @@ Route::group([
     Route::post('perfeccionamiento', 'PerfeccionamientoController@create');
     Route::put('perfeccionamiento/{perfeccion_id}', 'PerfeccionamientoController@update');
     Route::delete('perfeccionamiento/{perfeccion_id}', 'PerfeccionamientoController@destroy');
+    
 
 });

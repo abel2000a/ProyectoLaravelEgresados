@@ -9,6 +9,6 @@ class Egresado extends Model
     //
     public $timestamps = false;
     protected $primaryKey = 'egresado_id';
-    protected $guarded = ["id"];
+    protected $guarded = ["egresado_id"]; 
     protected $table ='egresado';
 }

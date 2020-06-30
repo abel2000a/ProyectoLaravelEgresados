@@ -33,7 +33,10 @@ class EgresadoController extends Controller
 
     public function show($egresado_id)
     {
+
+        
         $egresado= Egresado::findOrFail($egresado_id);
+        
         
         return response()->json($egresado);
     }

@@ -25,6 +25,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('cliente/index',"ClienteController@index");
 Route::get('cliente/show/{id}',"ClienteController@show");
 
+
 Route::get('egresado/index',"EgresadoController@index");
 Route::get('egresado/show/{egresado_id}',"EgresadoController@show");
 
