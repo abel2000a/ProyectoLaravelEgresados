@@ -67,12 +67,6 @@ Route::group([
     Route::delete('egresado/{egresado_id}', 'EgresadoController@destroy');
 
 
-    Route::get('comentario', 'ComentarioController@index');
-    Route::get('comentario/{comentarios_id}', 'comentarioController@show');
-    Route::post('comentario', 'comentarioController@create');
-    Route::put('comentario/{comentarios_id}', 'comentarioController@update');
-    Route::delete('comentario/{comentarios_id}', 'comentarioController@destroy');
-
     Route::get('escuela', 'EscuelaController@index');
     Route::get('escuela/{escuela_profesional_id}', 'escuelaController@show');
     Route::post('escuela', 'escuelaController@create');
@@ -108,11 +102,11 @@ Route::group([
     Route::delete('empresa/{empresa_id}', 'EmpresaController@destroy');
 
 
-    Route::get('historial', 'HistorialController@index');
-    Route::get('historial/{historial_id}', 'HistorialController@show');
-    Route::post('historial', 'HistorialController@create');
-    Route::put('historial/{historial_id}', 'HistorialController@update');
-    Route::delete('historial/{historial_id}', 'HistorialController@destroy');
+    Route::get('detalle', 'HistorialController@index');
+    Route::get('detalle/{detalle_id}', 'HistorialController@show');
+    Route::post('detalle', 'HistorialController@create');
+    Route::put('detalle/{detalle_id}', 'HistorialController@update');
+    Route::delete('detalle/{detalle_id}', 'HistorialController@destroy');
 
 
     Route::get('egresadodatos', 'EgresadoDatosController@index');

@@ -8,7 +8,8 @@ class Historial extends Model
 {
     //
     public $timestamps = false;
-    protected $primaryKey = 'historial_id';
-    protected $table ='historial';
-    protected $guarded = ["id"];
+    protected $primaryKey = 'detalle_id';
+    protected $guarded = ["detalle_id"];
+    protected $table ='detalle_trabajo';
+    
 }

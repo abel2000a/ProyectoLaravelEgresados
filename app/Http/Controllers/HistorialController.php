@@ -11,8 +11,8 @@ class HistorialController extends Controller
     public function index()
     {
 
-        $historial = Historial::all(); 
-        return response()->json($historial);
+        $detalle = Historial::all(); 
+        return response()->json($detalle);
     }
 
     
@@ -24,27 +24,27 @@ class HistorialController extends Controller
     }
 
 
-    public function show($historial_id)
+    public function show($detalle_id)
     {
        
-        $historial= Historial::findOrFail($historial_id);
+        $detalle= Historial::findOrFail($detalle_id);
         
-        return response()->json($historial);
+        return response()->json($detalle);
     }
 
 
-    public function update(Request $request, $historial_id)
+    public function update(Request $request, $detalle_id)
     {
         
-            Historial::findOrFail($historial_id)->update($request->all());
+            Historial::findOrFail($detalle_id)->update($request->all());
             return response()->json(['success' => true]);
          
     }
 
     
-    public function destroy($historial_id)
+    public function destroy($detalle_id)
     {
-        Historial::findOrFail($historial_id)->delete();
+        Historial::findOrFail($detalle_id)->delete();
         return response()->json(['success' => true]);
     }
 }
