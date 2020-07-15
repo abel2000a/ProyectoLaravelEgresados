@@ -88,11 +88,11 @@ Route::group([
     Route::delete('experiencia/{exper_id}', 'ExperienciaController@destroy');
 
 
-    Route::get('curso', 'CursoController@index');
-    Route::get('curso/{curso_id}', 'CursoController@show');
-    Route::post('curso', 'CursoController@create');
-    Route::put('curso/{curso_id}', 'CursoController@update');
-    Route::delete('curso/{curso_id}', 'CursoController@destroy');
+    Route::get('cursos', 'CursoController@index');
+    Route::get('cursos/{cursos_id}', 'CursoController@show');
+    Route::post('cursos', 'CursoController@create');
+    Route::put('cursos/{cursos_id}', 'CursoController@update');
+    Route::delete('cursos/{cursos_id}', 'CursoController@destroy');
 
 
     Route::get('empresa', 'EmpresaController@index');

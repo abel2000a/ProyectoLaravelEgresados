@@ -8,7 +8,7 @@ class Curso extends Model
 {
     //
     public $timestamps = false;
-    protected $primaryKey = 'curso_id';
-    protected $guarded = ["id"];
-    protected $table ='curso';
+    protected $primaryKey = 'cursos_id';
+    protected $guarded = ["cursos_id"];
+    protected $table ='cursos';
 }

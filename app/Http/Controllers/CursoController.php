@@ -11,8 +11,8 @@ class CursoController extends Controller
     public function index()
     {
 
-        $curso = Curso::all(); 
-        return response()->json($curso);
+        $cursos = Curso::all(); 
+        return response()->json($cursos);
     }
 
     
@@ -24,27 +24,27 @@ class CursoController extends Controller
     }
 
 
-    public function show($curso_id)
+    public function show($cursos_id)
     {
        
-        $curso= Curso::findOrFail($curso_id);
+        $cursos= Curso::findOrFail($cursos_id);
         
-        return response()->json($curso);
+        return response()->json($cursos);
     }
 
 
-    public function update(Request $request, $curso_id)
+    public function update(Request $request, $cursos_id)
     {
         
-            Curso::findOrFail($curso_id)->update($request->all());
+            Curso::findOrFail($cursos_id)->update($request->all());
             return response()->json(['success' => true]);
          
     }
 
     
-    public function destroy($curso_id)
+    public function destroy($cursos_id)
     {
-        Curso::findOrFail($curso_id)->delete();
+        Curso::findOrFail($cursos_id)->delete();
         return response()->json(['success' => true]);
     }
 }

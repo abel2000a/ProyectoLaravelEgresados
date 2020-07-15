@@ -37,8 +37,8 @@ Route::get('cursosofer/index',"EgresadoController@index");
 Route::get('cursosofer/show/{egresado_id}',"EgresadoController@show");
 
 
-Route::get('curso/index',"CursoController@index");
-Route::get('curso/show/{curso_id}',"CursoController@show");
+Route::get('cursos/index',"CursoController@index");
+Route::get('cursos/show/{cursos_id}',"CursoController@show");
 
 Route::get('empresa/index',"EmpresaController@index");
 Route::get('empresa/show/{empresa_id}',"EmpresaController@show");
