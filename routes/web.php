@@ -10,21 +10,21 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use GuzzleHttp\Client;
+
 
 Route::get('/', function () {
     return view('welcome');
 });
 
 
+Route::get('json-api', "medio@index");
+
 Auth::routes(['verify' => true]);
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('cliente/index',"ClienteController@index");
-Route::get('cliente/show/{id}',"ClienteController@show");
-
 
 Route::get('egresado/index',"EgresadoController@index");
 Route::get('egresado/show/{egresado_id}',"EgresadoController@show");

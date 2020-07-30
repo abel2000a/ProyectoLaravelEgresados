@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
 use App\Egresado;
 class EgresadoController extends Controller
 {
@@ -19,17 +20,27 @@ class EgresadoController extends Controller
         return response()->json($egresados);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create(Request $request)
     {
         //
         Egresado::create($request->all());
         return response()->json(['success' => true]);
     }
+
+    /*public function misdatos()
+    {
+       $result = User::join('personas', 'personaID', '=', 'personas.id')
+        ->join('paises', 'personas.pais', '=', 'paises.id')
+        ->join('departamentos', 'personas.departamento', '=', 'departamentos.id')->where('personaID','=',auth()->user()->id)
+        ->select('users.name as usuario','users.avatar','personas.nombre','personas.ap_materno','users.role',
+        'personas.ap_paterno','personas.dni','personas.celular','personas.dni', 'paises.nombre as pais',
+        'personas.email','personas.fec_nacimiento','personas.est_civil','personas.domicilio_actual','personas.sexo'
+        ,'personas.dependiente','departamentos.nombre as departamentos','personas.id as persona_ID','users.id as user_ID')
+        ->get();
+        return response()->json($result);
+    }*/
+
 
     public function show($egresado_id)
     {

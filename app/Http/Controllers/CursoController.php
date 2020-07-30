@@ -10,9 +10,11 @@ class CursoController extends Controller
     //
     public function index()
     {
-
         $cursos = Curso::all(); 
         return response()->json($cursos);
+
+
+    
     }
 
     

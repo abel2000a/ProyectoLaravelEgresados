@@ -16,6 +16,11 @@ use Illuminate\Http\Request;
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
+header('Access-Control-Allow-Origin: *'); 
+header("Access-Control-Allow-Credentials: true");
+header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
+header('Access-Control-Max-Age: 1000');
+header('Access-Control-Allow-Headers: Authorization,Origin, Content-Type, X-Auth-Token, X-XSRF-TOKEN');
 
 Route::group([
 
@@ -31,33 +36,10 @@ Route::group([
     Route::post('me', 'AuthController@me');
     Route::post('sendPasswordResetLink', 'ResetPasswordController@sendEmail');
     Route::post('resetPassword', 'ChangePasswordController@index');
+    Route::get('usuario', 'AuthController@me');
 
-
-    Route::get('cliente', 'ClienteController@index');
-    Route::get('cliente/{id}', 'ClienteController@show');
-    Route::post('cliente', 'ClienteController@create');
-    Route::put('cliente/{id}', 'ClienteController@update');
-    Route::delete('cliente/{id}', 'ClienteController@destroy');
-
-    Route::get('persona', 'PersonaController@index');
-    Route::get('persona/{persona_id}', 'PersonaController@show');
-    Route::post('persona', 'PersonaController@create');
-    Route::put('persona/{persona_id}', 'PersonaController@update');
-    Route::delete('persona/{persona_id}', 'PersonaController@destroy');
-
-
-    Route::get('rango', 'RangoController@index');
-    Route::get('rango/{rango_id}', 'RangoController@show');
-    Route::post('rango', 'RangoController@create');
-    Route::put('rango/{rango_id}', 'RangoController@update');
-    Route::delete('rango/{rango_id}', 'RangoController@destroy');
-
-
-    Route::get('cursosofer', 'Cursos_OferController@index');
-    Route::get('cursosofer/{cursos_of_id}', 'Cursos_OferController@show');
-    Route::post('cursosofer', 'Cursos_OferController@create');
-    Route::put('cursosofer/{cursos_of_id}', 'Cursos_OferController@update');
-    Route::delete('cursosofer/{cursos_of_id}', 'Cursos_OferController@destroy');
+    
+    Route::get('json-api', "medio@index");
 
 
     Route::get('egresado', 'EgresadoController@index');
@@ -81,13 +63,6 @@ Route::group([
     Route::delete('facultad/{facultad_id}', 'FacultadController@destroy');
 
 
-    Route::get('experiencia', 'ExperienciaController@index');
-    Route::get('experiencia/{exper_id}', 'ExperienciaController@show');
-    Route::post('experiencia', 'ExperienciaController@create');
-    Route::put('experiencia/{exper_id}', 'ExperienciaController@update');
-    Route::delete('experiencia/{exper_id}', 'ExperienciaController@destroy');
-
-
     Route::get('cursos', 'CursoController@index');
     Route::get('cursos/{cursos_id}', 'CursoController@show');
     Route::post('cursos', 'CursoController@create');
@@ -97,6 +72,7 @@ Route::group([
 
     Route::get('empresa', 'EmpresaController@index');
     Route::get('empresa/{empresa_id}', 'EmpresaController@show');
+    Route::get('empresa/{egresado_id}', 'EmpresaController@showdet');
     Route::post('empresa', 'EmpresaController@create');
     Route::put('empresa/{empresa_id}', 'EmpresaController@update');
     Route::delete('empresa/{empresa_id}', 'EmpresaController@destroy');
@@ -109,32 +85,5 @@ Route::group([
     Route::delete('detalle/{detalle_id}', 'HistorialController@destroy');
 
 
-    Route::get('egresadodatos', 'EgresadoDatosController@index');
-    Route::get('egresadodatos/{id}', 'EgresadoDatosController@show');
-    Route::post('egresadodatos', 'EgresadoDatosController@create');
-    Route::put('egresadodatos/{id}', 'EgresadoDatosController@update');
-    Route::delete('egresadodatos/{id}', 'EgresadoDatosController@destroy');
-
-
-    Route::get('respuesta', 'RespuestaController@index');
-    Route::get('respuesta/{respuesta_id}', 'RespuestaController@show');
-    Route::post('respuesta', 'RespuestaController@create');
-    Route::put('respuesta/{respuesta_id}', 'RespuestaController@update');
-    Route::delete('respuesta/{respuesta_id}', 'RespuestaController@destroy');
-
-
-    Route::get('oferta', 'OfertaLaboralController@index');
-    Route::get('oferta/{oferta_id}', 'OfertaLaboralController@show');
-    Route::post('oferta', 'OfertaLaboralController@create');
-    Route::put('oferta/{oferta_id}', 'OfertaLaboralController@update');
-    Route::delete('oferta/{oferta_id}', 'OfertaLaboralController@destroy');
-
-
-    Route::get('perfeccionamiento', 'PerfeccionamientoController@index');
-    Route::get('perfeccionamiento/{perfeccion_id}', 'PerfeccionamientoController@show');
-    Route::post('perfeccionamiento', 'PerfeccionamientoController@create');
-    Route::put('perfeccionamiento/{perfeccion_id}', 'PerfeccionamientoController@update');
-    Route::delete('perfeccionamiento/{perfeccion_id}', 'PerfeccionamientoController@destroy');
-    
 
 });
