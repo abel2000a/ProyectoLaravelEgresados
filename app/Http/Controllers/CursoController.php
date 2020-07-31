@@ -11,39 +11,23 @@ class CursoController extends Controller
     public function index()
     {
         $cursos = Curso::all(); 
-        return response()->json($cursos);
-
-
-    
+        return response()->json($cursos);    
     }
-
-    
     public function create(Request $request)
-    {
-        
+    { 
         Curso::create($request->all());
         return response()->json(['success' => true]);
     }
-
-
     public function show($cursos_id)
     {
-       
         $cursos= Curso::findOrFail($cursos_id);
-        
         return response()->json($cursos);
     }
-
-
     public function update(Request $request, $cursos_id)
-    {
-        
+    {        
             Curso::findOrFail($cursos_id)->update($request->all());
-            return response()->json(['success' => true]);
-         
-    }
-
-    
+            return response()->json(['success' => true]);   
+    }    
     public function destroy($cursos_id)
     {
         Curso::findOrFail($cursos_id)->delete();

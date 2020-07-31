@@ -38,7 +38,7 @@ Route::group([
     Route::post('resetPassword', 'ChangePasswordController@index');
     Route::get('usuario', 'AuthController@me');
 
-    
+
     Route::get('json-api', "medio@index");
 
 
@@ -78,11 +78,11 @@ Route::group([
     Route::delete('empresa/{empresa_id}', 'EmpresaController@destroy');
 
 
-    Route::get('detalle', 'HistorialController@index');
-    Route::get('detalle/{detalle_id}', 'HistorialController@show');
-    Route::post('detalle', 'HistorialController@create');
-    Route::put('detalle/{detalle_id}', 'HistorialController@update');
-    Route::delete('detalle/{detalle_id}', 'HistorialController@destroy');
+    Route::get('detalle', 'DetalleController@index');
+    Route::get('detalle/{detalle_id}', 'DetalleController@show');
+    Route::post('detalle', 'DetalleController@create');
+    Route::put('detalle/{detalle_id}', 'DetalleController@update');
+    Route::delete('detalle/{detalle_id}', 'DetalleController@destroy');
 
 
 
